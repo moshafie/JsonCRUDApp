@@ -1,0 +1,39 @@
+﻿@model JsonCRUDApp.Model.ViewModels.Employees
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h4>Employee</h4>
+    <hr />
+    <dl class="row">
+   
+    <div>
+        <a class="btn btn-primary" asp-action="Create" href="/Employee/Create">Add New Employee</a>
+    </div>
+
+    <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.employees)
+                {
+                    <tr>
+                        <td>@item.firstName</td>
+                        <td>@item.lastName</td>
+                        <td>@item.Age</td>
+                    <td><a class="btn btn-primary" asp-action="Create" href="/Employee/Edit/@item.Id">Edit</a></td>
+                    <td><a class="btn btn-danger" asp-action="Create" href="/Employee/Delete/@item.Id">Delete</a></td>
+
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+
