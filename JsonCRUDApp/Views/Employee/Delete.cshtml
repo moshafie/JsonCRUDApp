@@ -1,4 +1,4 @@
-﻿@model JsonCRUDApp.Model.Employee
+﻿@model Employee
 
 @{
     ViewData["Title"] = "Delete Warning";
@@ -37,8 +37,10 @@
             @Html.DisplayFor(model => model.firstName)
         </dd>
     </dl>
-  
-        <a href="/Employee/DeleteEmp/@Model.Id" class="btn btn-danger" >Delete</a> |
-        <a asp-action="Index" href="/">Back to List</a>
+
+
+    <a asp-controller="Employee" asp-action="DeleteEmp"
+        asp-route-id="@Model.Id" class="btn btn-danger">Delete</a> |
+        <a asp-action="Index" >Back to List</a>
   
 </div>

@@ -76,14 +76,12 @@ namespace JsonCRUDApp.Controllers
         // GET: EmployeeController/Delete/5
         public ActionResult Delete(string id)
         {
-            JSONCRUDExtensions.Delete(path, id);
             Employee employee = JSONCRUDExtensions.Get(path, id);
-            return RedirectToAction(nameof(Index));
+            return View(employee);
         }
 
         // POST: EmployeeController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        [Route("Employee/DeleteEmp/{id?}")]
         public ActionResult DeleteEmp(string Id)
         {
             try

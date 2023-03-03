@@ -10,7 +10,7 @@
     <dl class="row">
    
     <div>
-        <a class="btn btn-primary" asp-action="Create" href="/Employee/Create">Add New Employee</a>
+        <a class="btn btn-primary" asp-action="Create" >Add New Employee</a>
     </div>
 
     <table class="table table-striped">
@@ -28,8 +28,8 @@
                         <td>@item.firstName</td>
                         <td>@item.lastName</td>
                         <td>@item.Age</td>
-                    <td><a class="btn btn-primary" asp-action="Create" href="/Employee/Edit/@item.Id">Edit</a></td>
-                    <td><a class="btn btn-danger" asp-action="Create" href="/Employee/Delete/@item.Id">Delete</a></td>
+                    <td><a class="btn btn-primary"  href="/Employee/Edit/@item.Id">Edit</a></td>
+                    <td><a class="btn btn-danger"  href="/Employee/Delete/@item.Id">Delete</a></td>
 
                     </tr>
                 }
